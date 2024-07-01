@@ -43,7 +43,8 @@ jobs:
       - name: Create Minecraft Preview Pack file
         run: |
           echo "📚 Creating directory structure for Minecraft Preview Pack"
-          cp -r . CCBG_PREVIEW/
+          mkdir CCBG_PREVIEW
+          cp -r !(CCBG_PREVIEW) CCBG_PREVIEW/
           node workflow-script/updateManifest.js
 
           echo "📚 Creating MC Pack file for Preview"
