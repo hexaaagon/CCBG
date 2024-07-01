@@ -53,12 +53,12 @@ jobs:
 
           echo "📚 Creating MC Pack file for Preview"
           cd CCBG_PREVIEW
-          zip -r ../mc_pack_preview.zip . -x "node_modules/*" ".git/*" "*.zip"
+          zip -r ../mc_pack_preview.zip . -x "node_modules/*" ".git/*" "*.zip" "*.mcpack"
           cd ..
           cp mc_pack_preview.zip CCBG_${{ github.event.release.tag_name }}_Minecraft_PREVIEW.mcpack
 
           echo "📚 Creating ZIP file for Minecraft Preview"
-          zip -r CCBG_${{ github.event.release.tag_name }}_Minecraft_PREVIEW.zip CCBG_PREVIEW -x "node_modules/*" ".git/*" "*.zip"
+          zip -r CCBG_${{ github.event.release.tag_name }}_Minecraft_PREVIEW.zip CCBG_PREVIEW -x "node_modules/*" ".git/*" "*.zip" "*.mcpack"
 
           echo "📚 Cleaning up"
           rm -rf CCBG_PREVIEW
