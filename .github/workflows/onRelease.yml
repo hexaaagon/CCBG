@@ -45,7 +45,7 @@ jobs:
           echo "📚 Creating directory structure for Minecraft Preview Pack"
           mkdir CCBG_PREVIEW
           rsync -av --exclude='node_modules' --exclude='.git' --exclude='CCBG_PREVIEW' --exclude='*.zip' ./ CCBG_PREVIEW/
-          node workflow-script/updateManifest.js
+          node workflow-script/updatePreviewManifest.js
 
           echo "📚 Creating MC Pack file for Preview"
           zip -r mc_pack_preview.zip CCBG_PREVIEW -x "node_modules/*" ".git/*" "src/*" ".github/*" "tsconfig.json" "README.md" "package.json" "package-lock.json" "LICENSE" ".gitignore" "*.zip"
